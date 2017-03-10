@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>智齿机器人</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/style/main.css">
+</head>
+
+<body class="page-blogs_show">
+    {% include 'nav.html' %}
+    <div class="section section-blog">
+        <div class="content">
+            <div class="head">
+                <h1 class="title">{{blog.title}}：</h1>
+                <h2 class="subtitle">{{blog.sub_title}}</h2>
+            </div>
+            <div>{% autoescape off %}{{blog.content}}{% endautoescape %} </div>
+            <p class="author">{{blog.author}}</p>
+            <p class="time">{{blog.pub_date}}</p>
+        </div>
+    </div>
+    {% include 'jssdk.html' %}
+</body>
+
+</html>

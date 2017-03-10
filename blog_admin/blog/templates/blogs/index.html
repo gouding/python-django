@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>智齿机器人</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/style/main.css">
+</head>
+
+<body class="js-blogs">
+    {% include 'nav.html' %}
+    <div class="section section-cover">
+        <h1>智齿の博客天地</h1>
+        <h2>清理问题 持续优化 点滴积累</h2>
+    </div>
+    <div class="section-index section">
+        {% for item in ret %}
+        <div class="item">
+            <h3 class="title">
+                <a class="detail-msg js-detail-msg" href="/zcblogs/detail/{{item.tag}}" rel="prefetch">{{item.title}}</a>
+            </h3>
+            <div class="desc js-desc">{% autoescape off %}{{item.content}}{% endautoescape %} </div>
+            <div class="meta">
+                <span>{{item.author}}</span>
+                <span>{{ item.date}}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% include 'jssdk.html' %}
+</body>
+<script src="/static/js/blogs/index.js"></script>
+
+</html>
